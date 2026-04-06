@@ -1,0 +1,26 @@
+; ── SYNTHETIC PLACEHOLDER SEQUENCES ──────────────────────────────────────
+;
+; The sequences below are NOT real mcrA or mcrB sequences.
+; They are synthetic DNA strings used only to demonstrate the tool's API.
+;
+; To obtain verified M. acetivorans C2A sequences, download from NCBI:
+;   Genome:  GenBank AE010299.1  (Methanosarcina acetivorans C2A)
+;   mcrA:    locus tag MA0528    https://www.ncbi.nlm.nih.gov/gene/1479701
+;   mcrB:    locus tag MA0529    https://www.ncbi.nlm.nih.gov/gene/1479702
+;   mcrG:    locus tag MA0530    https://www.ncbi.nlm.nih.gov/gene/1479703
+;
+; Quick download (requires NCBI Entrez tools):
+;   efetch -db nuccore -id AE010299.1 -format fasta > M_acetivorans_C2A.fasta
+; ──────────────────────────────────────────────────────────────────────────
+
+>SYNTHETIC_TARGET_A_placeholder_not_a_real_sequence
+GCGATCGATGCGATCGATGCGATCGATGCGATCGATGCGATCGATGCGAT
+CGATGCGATCGATGCGATCGATGCGATCGATGCGATCGATGCGATCGATG
+CGATCGATGCGATCGATGCGATCGATGCGATCGATGCGATCGATGCGATC
+ATCGATGCGATCGATGCGATCGATGCGATCGATGCGATCGATGCGATCGA
+
+>SYNTHETIC_TARGET_B_placeholder_not_a_real_sequence
+CGCGCGATCGATCGCGATCGATCGCGCGATCGATCGCGATCGATCGCGCG
+ATCGATCGCGATCGATCGCGCGATCGATCGCGATCGATCGCGCGATCGAT
+CGCGATCGATCGCGCGATCGATCGCGATCGATCGCGCGATCGATCGCGAT
+CGATCGCGATCGATCGCGCGATCGATCGCGATCGATCGCGCGATCGATCG

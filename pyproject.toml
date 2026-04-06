@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "archaeal-sgrna-designer"
+version = "0.1.0"
+description = "sgRNA design for archaeal CRISPR-Cas9 editing (Methanosarcina and relatives)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["CRISPR", "archaea", "sgRNA", "Methanosarcina", "methanogenesis"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+# No hard dependencies — pure stdlib + optional extras below.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov"]
+biopython = ["biopython>=1.81"]
+
+[project.urls]
+Homepage = "https://github.com/CameronPiepkorn/archaeal-sgrna-designer"
+"Bug Tracker" = "https://github.com/CameronPiepkorn/archaeal-sgrna-designer/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["archaeal_sgrna*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--tb=short -v"
+
+[tool.coverage.run]
+source = ["archaeal_sgrna"]
