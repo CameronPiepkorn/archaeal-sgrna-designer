@@ -32,7 +32,8 @@ class GuideRNA:
 
     @property
     def full_spacer_with_pam(self) -> str:
-        return self.sequence + self.pam
+        # For 5' PAM nucleases (Cas12a), PAM precedes the spacer
+        return self.pam + self.sequence if len(self.pam) == 4 else self.sequence + self.pam
 
     def __repr__(self) -> str:
         warn = f"  ⚠ {'; '.join(self.warnings)}" if self.warnings else ""
@@ -117,23 +118,39 @@ class ArchaealGuideDesigner:
         return guides
 
 
+    # PAMs that come AFTER the spacer (3' PAM)
+    _PAM_IS_3PRIME = {"SpCas9", "SaCas9"}
+    # PAMs that come BEFORE the spacer (5' PAM)
+    _PAM_IS_5PRIME = {"AsCas12a"}
+
     def _extract_guides(
         self, sequence: str, seq_id: str, strand: str
     ) -> Iterator[GuideRNA]:
         pam_len = self._pam_length()
         gl = self.guide_length
+        five_prime_pam = self.pam_type in self._PAM_IS_5PRIME
 
         for match in self._pam_re.finditer(sequence):
             pam_start = match.start()
-            guide_start = pam_start - gl
 
-            if guide_start < 0:
-                continue
-            if pam_start + pam_len > len(sequence):
-                continue
-
-            spacer = sequence[guide_start:pam_start]
-            pam_seq = sequence[pam_start: pam_start + pam_len]
+            if five_prime_pam:
+                # PAM is 5' of spacer: [PAM][spacer]
+                spacer_start = pam_start + pam_len
+                spacer_end = spacer_start + gl
+                if spacer_end > len(sequence):
+                    continue
+                spacer = sequence[spacer_start:spacer_end]
+                pam_seq = sequence[pam_start:pam_start + pam_len]
+                guide_start = pam_start
+            else:
+                # PAM is 3' of spacer: [spacer][PAM]
+                guide_start = pam_start - gl
+                if guide_start < 0:
+                    continue
+                if pam_start + pam_len > len(sequence):
+                    continue
+                spacer = sequence[guide_start:pam_start]
+                pam_seq = sequence[pam_start:pam_start + pam_len]
 
             if len(spacer) != gl:
                 continue
