@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19506160.svg)](https://doi.org/10.5281/zenodo.19506160)
 # archaeal-sgrna-designer
 
 [![CI](https://github.com/CameronPiepkorn/archaeal-sgrna-designer/actions/workflows/ci.yml/badge.svg)](https://github.com/CameronPiepkorn/archaeal-sgrna-designer/actions)
