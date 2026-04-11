@@ -1,0 +1,69 @@
+cff-version: 1.2.0
+title: archaeal-sgrna-designer
+message: >-
+  If you use this software in your research, please cite it
+  using the metadata from this file.
+type: software
+version: 1.0.0
+date-released: "2026-04-08"
+authors:
+  - family-names: Piepkorn
+    given-names: Cameron
+    affiliation: Independent Researcher
+abstract: >-
+  archaeal-sgrna-designer is a Python library for designing and
+  ranking sgRNA candidates for archaeal CRISPR-Cas9 genome editing.
+  It includes PAM-aware scanning for SpCas9, SaCas9, and AsCas12a,
+  archaeal-specific scoring heuristics that penalise internal Box A
+  promoter motifs and TTTT Pol-III terminator runs, strand-aware
+  guide extraction with genomic coordinates, and export to TSV and
+  JSON formats. Scoring is tuned for Methanosarcina acetivorans and
+  related methanogens.
+keywords:
+  - CRISPR
+  - sgRNA
+  - archaea
+  - genome editing
+  - Cas9
+  - Cas12a
+  - Methanosarcina
+  - bioinformatics
+  - guide RNA design
+license: MIT
+repository-code: "https://github.com/CameronPiepkorn/archaeal-sgrna-designer"
+url: "https://github.com/CameronPiepkorn/archaeal-sgrna-designer"
+references:
+  - type: article
+    authors:
+      - family-names: Nayak
+        given-names: Dipti K.
+      - family-names: Metcalf
+        given-names: William W.
+    title: >-
+      Cas9-mediated genome editing in the methanogenic archaeon
+      Methanosarcina acetivorans
+    journal: Proceedings of the National Academy of Sciences
+    volume: 114
+    issue: 11
+    start: 2976
+    end: 2981
+    year: 2017
+  - type: article
+    authors:
+      - family-names: Chadwick
+        given-names: G.L.
+      - family-names: Joiner
+        given-names: A.M.N.
+      - family-names: Ramesh
+        given-names: A.
+      - family-names: Mitchell
+        given-names: A.K.
+      - family-names: Nayak
+        given-names: D.K.
+    title: >-
+      McrD binds asymmetrically to methyl-coenzyme M reductase improving
+      active-site accessibility during assembly
+    journal: Proceedings of the National Academy of Sciences
+    volume: 120
+    issue: 25
+    year: 2023
