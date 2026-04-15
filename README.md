@@ -1,3 +1,4 @@
+[![PyPI](https://img.shields.io/pypi/v/archaeal-sgrna-designer.svg)](https://pypi.org/project/archaeal-sgrna-designer/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19506160.svg)](https://doi.org/10.5281/zenodo.19506160)
 # archaeal-sgrna-designer
 
