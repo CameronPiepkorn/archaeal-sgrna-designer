@@ -22,7 +22,6 @@ Built to support research following:
 > to methyl-coenzyme M reductase improving active-site accessibility during
 > assembly.* PNAS 120(25):e2302815120.
 
----
 
 ## Features
 
@@ -34,7 +33,6 @@ Built to support research following:
 - **Flexible input** — raw sequence string, FASTA file, or windowed gene region
 - **Export** — TSV, JSON, or formatted text summary
 
----
 
 ## Installation
 
@@ -48,7 +46,6 @@ cd archaeal-sgrna-designer
 pip install -e ".[dev]"
 ```
 
----
 
 ## Quick Start
 
@@ -212,7 +209,6 @@ If you use this tool in published research, please cite:
   year    = {2017}
 }
 ```
-
 ---
 
 ## License
